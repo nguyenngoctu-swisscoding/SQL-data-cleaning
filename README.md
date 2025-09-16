@@ -19,3 +19,28 @@ Result:
 |mendie alexandrescu|46|single|malexandrescu8@state.gov|504-918-4753|34 Delladonna Terrace,New Orleans,Louisiana|Systems Administrator III|3/12/1921|
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
 
+### Cleaning Step 1
+Detect null value
+```sql
+SELECT COUNT(*) FROM club_member_info_cleaned WHERE marital_status IS NULL;
+```
+Identify MODE value in marital_status
+```sql
+SELECT MODE(marital_status) FROM club_member_info_cleaned;
+```
+Replace null with MODE value
+
+```sql
+UPDATE club_member_info_cleaned SET marital_status = 'married' WHERE marital_status IS NULL;
+```
+
+
+### Cleaning Step 2
+
+
+### Cleaning Step 3
+
+
+
+
+# Final result after clean
